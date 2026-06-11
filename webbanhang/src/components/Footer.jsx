@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Globe, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -13,9 +12,9 @@ const Footer = () => {
             </Link>
             <p>Chuyên cung cấp các loại bàn phím cơ cao cấp, chính hãng với dịch vụ tốt nhất.</p>
             <div className="social-links">
-              <a href="#"><Facebook size={20} /></a>
-              <a href="#"><Instagram size={20} /></a>
-              <a href="#"><Twitter size={20} /></a>
+              <a href="#"><Globe size={20} /></a>
+              <a href="#"><Globe size={20} /></a>
+              <a href="#"><Globe size={20} /></a>
             </div>
           </div>
 

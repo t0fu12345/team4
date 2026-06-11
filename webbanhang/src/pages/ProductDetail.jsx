@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { ShoppingCart, ArrowLeft } from 'lucide-react';
