@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { ShoppingCart, User, Menu, Search } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
+// Modified by mquang2 - Added notification feature
 const Header = () => {
   const { totalItems, setIsCartOpen } = useCart();
 
@@ -14,14 +15,15 @@ const Header = () => {
           </Link>
 
           <nav className="nav">
-            <NavLink to="/" end>Trang chủ</NavLink>
-            <NavLink to="/products">Sản phẩm</NavLink>
-            <NavLink to="/news">Tin tức</NavLink>
-            <NavLink to="/contact">Liên hệ</NavLink>
+            <NavLink to="/" end>Home Page</NavLink>
+            <NavLink to="/products">All Products</NavLink>
+            <NavLink to="/news">Latest News</NavLink>
+            <NavLink to="/contact">Contact Us</NavLink>
           </nav>
 
           <div className="header-actions">
             <button className="action-btn"><Search size={20} /></button>
+            <button className="action-btn"><Bell size={20} /> <span className="notification-count">{notifications}</span></button>
             <Link to="/login" className="action-btn"><User size={20} /></Link>
             <button className="action-btn cart-btn" onClick={() => setIsCartOpen(true)}>
               <ShoppingCart size={20} />
