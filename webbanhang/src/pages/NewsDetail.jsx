@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { news } from '../data/news';
 import { ArrowLeft } from 'lucide-react';
