@@ -80,7 +80,8 @@ img {
 
 /* Header */
 .header {
-  height: 70px;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
@@ -173,7 +174,7 @@ img {
 
 /* Main Content */
 .main-content {
-  min-height: calc(100vh - 70px - 300px);
+  min-height: calc(100vh - 300px);
 }
 
 /* Section */
