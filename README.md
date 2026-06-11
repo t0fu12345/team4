@@ -18,6 +18,8 @@ Trước khi code, phải lấy code mới nhất mà các thành viên khác đ
 git checkout main
 git pull origin main
 
+TEST
+
 2. Tạo nhánh riêng để làm tính năng mới
 Tuyệt đối không code trực tiếp trên main. Hãy tạo một nhánh mang tên mình hoặc tên tính năng mình làm:
 Ví dụ: git checkout -b nhanh-cua-quang
