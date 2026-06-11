@@ -16,6 +16,7 @@ const Header = () => {
           <nav className="nav">
             <NavLink to="/" end>Trang chủ</NavLink>
             <NavLink to="/products">Sản phẩm</NavLink>
+            <NavLink to="/tasks">Công việc</NavLink>
             <NavLink to="/news">Tin tức</NavLink>
             <NavLink to="/contact">Liên hệ</NavLink>
           </nav>
