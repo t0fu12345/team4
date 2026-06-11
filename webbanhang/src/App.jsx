@@ -10,7 +10,12 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import './App.css';
 
+// mquang2: Added versioning system
+const APP_VERSION = '2.0.0';
+
 function App() {
+  console.log(`App Version: ${APP_VERSION}`);
+
   return (
     <Router>
       <Layout>
@@ -23,6 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </Layout>
     </Router>
