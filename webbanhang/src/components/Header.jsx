@@ -1,7 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
 import { ShoppingCart, User, Menu, Search } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const Header = () => {
+  const { totalItems, setIsCartOpen } = useCart();
+
   return (
     <header className="header">
       <div className="container">
@@ -20,9 +23,11 @@ const Header = () => {
           <div className="header-actions">
             <button className="action-btn"><Search size={20} /></button>
             <Link to="/login" className="action-btn"><User size={20} /></Link>
-            <button className="action-btn cart-btn">
+            <button className="action-btn cart-btn" onClick={() => setIsCartOpen(true)}>
               <ShoppingCart size={20} />
-              <span className="cart-count">0</span>
+              {totalItems > 0 && (
+                <span className="cart-count">{totalItems > 99 ? '99+' : totalItems}</span>
+              )}
             </button>
             <button className="menu-toggle"><Menu size={20} /></button>
           </div>

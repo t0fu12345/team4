@@ -1,10 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { ShoppingCart, ArrowLeft } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find(p => p.id === parseInt(id));
+  const { addToCart, setIsCartOpen } = useCart();
 
   if (!product) {
     return (
@@ -19,6 +21,11 @@ const ProductDetail = () => {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
   };
 
+  const handleAddToCart = () => {
+    addToCart(product);
+    setIsCartOpen(true);
+  };
+
   return (
     <div className="product-detail-page section">
       <div className="container">
@@ -28,13 +35,13 @@ const ProductDetail = () => {
 
         <div className="detail-grid">
           <div className="detail-image">
-            <img 
-              src={product.image} 
-              alt={product.name} 
-              style={{ borderRadius: '1rem', width: '100%', boxShadow: 'var(--shadow)' }} 
+            <img
+              src={product.image}
+              alt={product.name}
+              style={{ borderRadius: '1rem', width: '100%', boxShadow: 'var(--shadow)' }}
             />
           </div>
-          
+
           <div className="detail-info">
             <span style={{ color: 'var(--primary-color)', fontWeight: 600, textTransform: 'uppercase', fontSize: '0.85rem' }}>
               {product.category}
@@ -63,7 +70,11 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            <button className="btn btn-primary" style={{ width: '100%', padding: '1rem', fontSize: '1.1rem' }}>
+            <button
+              className="btn btn-primary"
+              style={{ width: '100%', padding: '1rem', fontSize: '1.1rem' }}
+              onClick={handleAddToCart}
+            >
               <ShoppingCart size={20} /> Thêm vào giỏ hàng
             </button>
           </div>
