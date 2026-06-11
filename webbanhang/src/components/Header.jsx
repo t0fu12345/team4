@@ -1,10 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
-import { ShoppingCart, User, Menu, Search, Bell } from 'lucide-react';
+import { ShoppingCart, User, Menu, Search } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 // Modified by mquang2 - Added notification feature
 const Header = () => {
-  const cartCount = 5;
-  const notifications = 3;
+  const { totalItems, setIsCartOpen } = useCart();
 
   return (
     <header className="header">
@@ -25,9 +25,11 @@ const Header = () => {
             <button className="action-btn"><Search size={20} /></button>
             <button className="action-btn"><Bell size={20} /> <span className="notification-count">{notifications}</span></button>
             <Link to="/login" className="action-btn"><User size={20} /></Link>
-            <button className="action-btn cart-btn">
+            <button className="action-btn cart-btn" onClick={() => setIsCartOpen(true)}>
               <ShoppingCart size={20} />
-              <span className="cart-count">{cartCount}</span>
+              {totalItems > 0 && (
+                <span className="cart-count">{totalItems > 99 ? '99+' : totalItems}</span>
+              )}
             </button>
             <button className="menu-toggle"><Menu size={20} /></button>
           </div>
