@@ -88,6 +88,10 @@ img {
   z-index: 100;
 }
 
+.header .container {
+  height: 100%;
+}
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -99,6 +103,8 @@ img {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--black);
+  display: flex;
+  align-items: center;
 }
 
 .logo span {
@@ -107,6 +113,7 @@ img {
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
